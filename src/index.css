@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles  */
+@layer base {
+  html, body {
+    @apply font-sans bg-white text-gray-900 overflow-x-hidden scroll-smooth;
+  }
+}
+
+
+/* Custom Utilities */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .smooth {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+}
+
+/*   Global Enhancements  */
+*:focus {
+  outline: none !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  letter-spacing: 0.2px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+
