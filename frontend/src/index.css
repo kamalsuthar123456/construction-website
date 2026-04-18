@@ -1,0 +1,180 @@
+/* ===================================================================
+   IMPORTANT: @import statements MUST be at the very top!
+   =================================================================== */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html, body {
+    @apply font-sans bg-white text-gray-900 overflow-x-hidden scroll-smooth;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .smooth {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+}
+
+/* Global Enhancements */
+*:focus {
+  outline: none !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  letter-spacing: 0.2px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+
+@layer components {
+  .mobile-menu {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: slideDown 0.25s ease-out;
+    background: white;
+  }
+
+  .mobile-menu-link {
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .mobile-login {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid theme('colors.primary');
+    color: theme('colors.primary');
+  }
+
+  .mobile-register {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    background: theme('colors.primary');
+    color: white;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 40;
+  }
+}
+
+/* ================================================================
+   SOCIAL ICONS - FOOTER
+   ================================================================ */
+
+.social-icons-container {
+  display: flex;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icon-item {
+  position: relative;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  text-decoration: none;
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-link i {
+  font-size: 1.1rem;
+  color: #555;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.social-link .social-name {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: var(--hover-bg);
+}
+
+.social-link:hover i {
+  color: white;
+  transform: scale(1.15);
+}
+
+.social-link:hover .social-name {
+  opacity: 1;
+  bottom: -30px;
+}
+
+@media (max-width: 768px) {
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-link i {
+    font-size: 1rem;
+  }
+}
+
