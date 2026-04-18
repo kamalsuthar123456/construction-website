@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { Auth0Provider } from '@auth0/auth0-react'
 import './index.css'  // ✅ Added CSS import
 import App from './App.jsx'
-
+// added learning comment
 createRoot(document.getElementById('root')).render(
   <StrictMode>  {/* ✅ Added StrictMode wrapper */}
     <Auth0Provider
